@@ -1,0 +1,1683 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>PennyTest2</name>
+    </assembly>
+    <members>
+        <member name="M:PennyTest2.Controllers.LoginController.GetLogin(CommonModule.RequestObj{PennyTest2.Models.Api.GetLoginRequest})">
+            <summary>
+            2.1 getLogin驗證使用者帳號密碼
+            </summary>
+            <param name="req">RequestObj_GetLoginRequest</param>
+            <returns>ResponseObj</returns>
+        </member>
+        <member name="M:PennyTest2.Controllers.LoginController.GetToken">
+            <summary>
+            取得起始token
+            </summary>
+            <returns>ResponseObj</returns>
+        </member>
+        <member name="M:PennyTest2.Controllers.LoginController.PutLogout(CommonModule.RequestObj{System.Object})">
+            <summary>
+            2.1.1 putLogout 使用者登出
+            </summary>
+            <param name="req">RequestObj</param>
+            <returns>ResponseObj</returns>
+        </member>
+        <member name="M:PennyTest2.Controllers.QueryController.GetTaskList(CommonModule.RequestObj{PennyTest2.Models.Api.GetTaskListRes})">
+            <summary>
+            任務查詢
+            </summary>
+        </member>
+        <member name="M:PennyTest2.Controllers.QueryController.PostMission(CommonModule.RequestObj{PennyTest2.Models.Api.GetAllTaskList})">
+            <summary>
+            新增任務
+            </summary>
+        </member>
+        <member name="M:PennyTest2.Controllers.QueryController.GetTaskReport(CommonModule.RequestObj{PennyTest2.Models.Api.GetTaskReportRequest})">
+            <summary>
+            取得任務資料excel
+            </summary>
+        </member>
+        <member name="M:PennyTest2.Controllers.QueryController.GetMissionReport(CommonModule.RequestObj{PennyTest2.Models.Api.GetMissionRequest})">
+            <summary>
+            取得多筆任務資料excel
+            </summary>
+        </member>
+        <member name="M:PennyTest2.Controllers.QueryController.InitExcelValue(System.Net.Http.HttpResponseMessage,System.String)">
+            <summary>
+            產生excel檔案
+            </summary>
+            <param name="response"></param>
+            <param name="fileName"></param>
+        </member>
+        <member name="M:PennyTest2.Controllers.QueryController.PutMissionPDF(CommonModule.RequestObj{PennyTest2.Models.Api.GetMissionRequest})">
+            <summary>
+            取得多筆任務資料pdf
+            </summary>
+            <param name="req">RequestObj</param>
+            <returns>ResponseObj</returns>
+        </member>
+        <member name="T:PennyTest2.Filter.BankEndFilter">
+            <summary>
+            API驗證過濾器
+            </summary>
+        </member>
+        <member name="M:PennyTest2.Filter.BankEndFilter.OnActionExecuting(System.Web.Http.Controllers.HttpActionContext)">
+            <summary>
+            Action 執行前啟動
+            </summary>
+            <param name="filterContext">HttpAction input內容</param>
+        </member>
+        <member name="M:PennyTest2.Filter.BankEndFilter.IsFromSwaggerTest(System.Net.Http.Headers.HttpRequestHeaders)">
+            <summary>
+            For SwaggerTest
+            </summary>
+            <param name="httpHeader">Http header</param>
+            <returns>true:SwaggerTest false: Not SwaggerTest</returns>
+        </member>
+        <member name="M:PennyTest2.Filter.BankEndFilter.OnActionExecuted(System.Web.Http.Filters.HttpActionExecutedContext)">
+            <summary>
+            Action 結束後(不一定需要實作)
+            </summary>
+            <param name="filterContext">HttpAction input內容</param>
+        </member>
+        <member name="T:PennyTest2.Filter.BankEndFilter.IgnoreBankEndFilter">
+            <summary>
+            Filter排除的屬性
+            </summary>
+        </member>
+        <member name="M:PennyTest2.Helper.DateFormateHelper.ToMMMddyyyString(System.Nullable{System.DateTime})">
+            <summary>
+            將日期時間轉為MMM/dd/yyyy字串(May/12/2019)
+            </summary>
+            <param name="dt">傳入物件</param>
+            <returns>字串</returns>
+        </member>
+        <member name="M:PennyTest2.Helper.DateFormateHelper.ToMMMddyyyHHmmString(System.Nullable{System.DateTime})">
+            <summary>
+            將日期時間轉為MMM/dd/yyyy HH:mm字串(May/12/2019 18:30)
+            </summary>
+            <param name="dt">傳入物件</param>
+            <returns>字串</returns>
+        </member>
+        <member name="M:PennyTest2.Helper.DateFormateHelper.ToMMMddyyyHHmmssString(System.Nullable{System.DateTime})">
+            <summary>
+            將日期時間轉為MMM/dd/yyyy HH:mm:ss字串(May/12/2019 18:30:20)
+            </summary>
+            <param name="dt">傳入物件</param>
+            <returns>字串</returns>
+        </member>
+        <member name="M:PennyTest2.Helper.DateFormateHelper.ToyyyyMMddString(System.Nullable{System.DateTime})">
+            <summary>
+            將日期時間轉為yyyy/MM/dd HH:mm:ss字串(2019/05/12 18:30:20)
+            </summary>
+            <param name="dt">傳入物件</param>
+            <returns>字串</returns>
+        </member>
+        <member name="M:PennyTest2.Helper.DateFormateHelper.ToyyyyMMddString(System.DateTime)">
+            <summary>
+            將日期時間轉為yyyy/MM/dd HH:mm:ss字串(2019/05/12 18:30:20)
+            </summary>
+            <param name="dt">傳入物件</param>
+            <returns>字串</returns>
+        </member>
+        <member name="M:PennyTest2.Helper.DateFormateHelper.ToyyyyMMddmmssString(System.Nullable{System.DateTime})">
+            <summary>
+            將日期時間轉為yyyy/MM/dd HH:mm:ss字串(2019/05/12 18:30:20)
+            </summary>
+            <param name="dt">傳入物件</param>
+            <returns>字串</returns>
+        </member>
+        <member name="M:PennyTest2.Helper.DateFormateHelper.ToyyMMddString(System.DateTime)">
+            <summary>
+            將日期時間轉為yyMMdd字串(190512)
+            </summary>
+            <param name="dt">傳入物件</param>
+            <returns>字串</returns>
+        </member>
+        <member name="M:PennyTest2.Helper.DateFormateHelper.StringToDateTime(System.String,System.String)">
+            <summary>
+            將字串轉為日期
+            </summary>
+            <param name="inputDateTime">傳入物件</param>
+            <param name="parseFormate">傳入格式</param>
+            <returns>字串</returns>
+        </member>
+        <member name="T:PennyTest2.Helper.ExcelHelper">
+            <summary>
+            ExcelHelper
+            </summary>
+        </member>
+        <member name="M:PennyTest2.Helper.ExcelHelper.ToDataTable``1(System.Collections.Generic.List{``0})">
+            <summary>
+            List To DataTable
+            </summary>
+            <typeparam name="T">泛型</typeparam>
+            <param name="items">資料項目</param>
+            <returns>DataTable</returns>
+        </member>
+        <member name="T:PennyTest2.Helpers.FunctionHelper">
+            <summary>
+            FunctionHelper
+            </summary>
+        </member>
+        <member name="M:PennyTest2.Helpers.FunctionHelper.GetTIMEZONE(System.String)">
+            <summary>
+            GetTIMEZONE
+            </summary>
+            <param name="req">req</param>
+            <returns>decimal</returns>
+        </member>
+        <member name="M:PennyTest2.Helpers.FunctionHelper.StringToDecimal(System.Object)">
+            <summary>
+            StringToDecimal
+            </summary>
+            <param name="value">value</param>
+            <returns>decimal</returns>
+        </member>
+        <member name="M:PennyTest2.Helpers.FunctionHelper.GetInsertSerialNo(System.Int32)">
+            <summary>
+            產生表單流水號，格式3碼，前面補零
+            </summary>
+            <param name="maxSerial"></param>
+            <returns></returns>
+        </member>
+        <member name="T:PennyTest2.Services.LoginService">
+            <summary>
+            2.1/2.1.1/2.2_驗證/取得使用者
+            </summary>
+        </member>
+        <member name="M:PennyTest2.Services.LoginService.CheckUserIsExist(PennyTest2.Models.Api.GetLoginRequest)">
+            <summary>
+            判斷使用者是否存在
+            </summary>
+            <param name="data">AD帳號</param>
+            <returns>USERINFOBACKEND</returns>
+        </member>
+        <member name="M:PennyTest2.Services.LoginService.GetUserNameE(PennyTest2.Models.Api.GetLoginRequest)">
+            <summary>
+            2.1 GetUserNameE_respone
+            </summary>
+            <param name="data">AD帳號</param>
+            <returns>RGroupInfo</returns>
+        </member>
+        <member name="M:PennyTest2.Services.LoginService.PutLogout(System.String)">
+            <summary>
+            2.1.1 putLogout 使用者登出
+            </summary>
+            <param name="uid">uid</param>
+        </member>
+        <member name="M:PennyTest2.Services.LoginService.GetBrowser">
+            <summary>
+            登入所使用的 BROSWER和版本
+            </summary>
+            <returns>string</returns>
+        </member>
+        <member name="M:PennyTest2.Services.LoginService.GetHeaderToken">
+            <summary>
+            登入所使用的GetHeaderToken
+            </summary>
+            <returns>string</returns>
+        </member>
+        <member name="M:PennyTest2.Services.LoginService.ValidateDBToken(System.String)">
+            <summary>
+            驗證token合法
+            </summary>
+            <param name="toekn">toekn</param>
+            <returns>bool</returns>
+        </member>
+        <member name="M:PennyTest2.Services.LoginService.ValidateDBTokenEffective(System.String)">
+            <summary>
+            驗證token有效
+            </summary>
+            <param name="toekn">toekn</param>
+            <returns>bool</returns>
+        </member>
+        <member name="M:PennyTest2.Services.LoginService.ValidateDBTokenLogout(System.String)">
+            <summary>
+            驗證token是否被登出
+            </summary>
+            <param name="toekn">toekn</param>
+            <returns>bool</returns>
+        </member>
+        <member name="M:PennyTest2.Services.LoginService.ValidateAD(System.String,System.String)">
+            <summary>
+            用戶資料驗證與資料取得
+            </summary>
+            <param name="account">畫面輸入之帳號</param>
+            <param name="password">畫面輸入之密碼</param>
+            <returns>bool</returns>
+        </member>
+        <member name="M:PennyTest2.Services.QueryService.GetTaskReport(PennyTest2.Models.Api.GetTaskReportRequest)">
+            <summary>
+            取得Task單筆資料 excel報表
+            </summary>
+            <param name="requestData"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PennyTest2.Services.QueryService.GetMissionReport(PennyTest2.Models.Api.GetMissionRequest)">
+            <summary>
+            取得mission excel報表
+            </summary>
+            <param name="requestData"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PennyTest2.Services.QueryService.CreateMissionPDF(System.Collections.Generic.List{PennyTest2.Models.Api.GetMissionQuery})">
+            <summary>
+            建立FLPDF
+            </summary>
+            <param name="elSrv"></param>
+            <param name="data"></param>
+        </member>
+        <member name="M:PennyTest2.Services.QueryService.GetPDFSerialNo(System.String,System.String,System.String)">
+            <summary>
+            處理檔名後面的流水號
+            </summary>
+            <param name="domain"></param>
+            <param name="outputPath"></param>
+            <param name="dataID"></param>
+            <param name="dataNo"></param>
+            <param name="fileNo"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PennyTest2.Services.QueryService.CreatePDFFile(System.IO.MemoryStream,System.String,System.String)">
+            <summary>
+            產生PDF
+            </summary>
+            <param name="stream"></param>
+            <param name="Domain"></param>
+            <param name="outputPath"></param>
+        </member>
+        <member name="T:CommonModule.ApiPermitFilter">
+            <summary>
+            API權限過濾器
+            </summary>
+        </member>
+        <member name="M:CommonModule.ApiPermitFilter.#ctor(CommonModule.ITokenValidate)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="service">Token驗證服務</param>
+        </member>
+        <member name="F:CommonModule.ApiPermitFilter.tokenValidateSrv">
+            <summary>
+            Token驗證服務
+            </summary>
+        </member>
+        <member name="M:CommonModule.ApiPermitFilter.OnActionExecuting(System.Web.Http.Controllers.HttpActionContext)">
+            <summary>
+            Action 執行前啟動
+            </summary>
+            <param name="filterContext">HttpAction input內容</param>
+        </member>
+        <member name="T:CommonModule.IgnoreApiPermit">
+            <summary>
+            Filter排除的屬性
+            </summary>
+        </member>
+        <member name="T:CommonModule.MtkAuthenticateFilter">
+            <summary>
+            安全性認證過濾器
+            </summary>
+        </member>
+        <member name="M:CommonModule.MtkAuthenticateFilter.OnActionExecuting(System.Web.Http.Controllers.HttpActionContext)">
+            <summary>
+            Action 執行前啟動
+            </summary>
+            <param name="filterContext">HttpAction input內容</param>
+        </member>
+        <member name="M:CommonModule.MtkAuthenticateFilter.OnActionExecuted(System.Web.Http.Filters.HttpActionExecutedContext)">
+            <summary>
+            Action 執行後啟動
+            </summary>
+            <param name="filterContext">HttpAction output內容</param>
+        </member>
+        <member name="M:CommonModule.MtkAuthenticateFilter.IsFromSwaggerTest(System.Net.Http.Headers.HttpRequestHeaders)">
+            <summary>
+            For SwaggerTest
+            </summary>
+            <param name="httpHeader">Http header</param>
+            <returns>true:SwaggerTest false: Not SwaggerTest</returns>
+        </member>
+        <member name="T:CommonModule.IgnoreMtkAuthenticate">
+            <summary>
+            Filter排除的屬性
+            </summary>
+        </member>
+        <member name="T:CommonModule.CommonValidator">
+            <summary>
+            常用檢核
+            </summary>
+        </member>
+        <member name="M:CommonModule.CommonValidator.IsNum(System.String)">
+            <summary>
+            是否為數字
+            </summary>
+            <param name="str">確認字串</param>
+            <returns>判斷結果</returns>
+        </member>
+        <member name="M:CommonModule.CommonValidator.CheckYOrN(System.String)">
+            <summary>
+            確認是否為Y或N
+            </summary>
+            <param name="str">確認字串</param>
+            <returns>判斷結果 true為是，false為不是</returns>
+        </member>
+        <member name="M:CommonModule.CommonValidator.IsValidDate(System.String)">
+            <summary>
+            判斷是否為日期格式
+            </summary>
+            <param name="inDate">確認字串</param>
+            <returns>判斷結果</returns>
+        </member>
+        <member name="M:CommonModule.CommonValidator.IsValidFileName(System.String,System.String[])">
+            <summary>
+            判斷檔名是否有容易造成異常字眼
+            </summary>
+            <param name="fileName">檔名</param>
+            <param name="extensionList">需判斷副檔名</param>
+            <returns>判斷結果</returns>
+        </member>
+        <member name="T:CommonModule.Commuser">
+            <summary>
+            會員資訊共用元件
+            </summary>
+        </member>
+        <member name="P:CommonModule.Commuser.Uid">
+            <summary>
+            Uid
+            </summary>
+        </member>
+        <member name="P:CommonModule.Commuser.Token">
+            <summary>
+            Token
+            </summary>
+        </member>
+        <member name="P:CommonModule.Commuser.Jwt">
+            <summary>
+            Jwt
+            </summary>
+        </member>
+        <member name="P:CommonModule.Commuser.DBUser">
+            <summary>
+            DBUser
+            </summary>
+        </member>
+        <member name="P:CommonModule.Commuser.TimezoneOffset">
+            <summary>
+            TimezoneOffset
+            </summary>
+        </member>
+        <member name="P:CommonModule.Commuser.RequestData">
+            <summary>
+            RequestData
+            </summary>
+        </member>
+        <member name="P:CommonModule.Commuser.AuthCode">
+            <summary>
+            AuthCode
+            </summary>
+        </member>
+        <member name="P:CommonModule.Commuser.AppInfo">
+            <summary>
+            AppInfo
+            </summary>
+        </member>
+        <member name="T:CommonModule.CommUtility">
+            <summary>
+            共用函數
+            </summary>
+        </member>
+        <member name="F:CommonModule.CommUtility.baseConfig">
+            <summary>
+            讀取Config 介面元件(原始型態)
+            </summary>
+        </member>
+        <member name="F:CommonModule.CommUtility.config">
+            <summary>
+            讀取Config 介面元件
+            </summary>
+        </member>
+        <member name="M:CommonModule.CommUtility.SetConfig(CommonModule.IConfig)">
+            <summary>
+            設定Config
+            </summary>
+            <param name="iConfig">IConfig介面的Config</param>
+        </member>
+        <member name="M:CommonModule.CommUtility.GetBaseConfig``1(System.String,``0)">
+            <summary>
+            讀取config 參數(T型態)(從Config)
+            </summary>
+            <typeparam name="T">參數型態</typeparam>
+            <param name="name">參數名稱</param>
+            <param name="defValue">預設參數</param>
+            <returns>T型態參數內容</returns>
+        </member>
+        <member name="M:CommonModule.CommUtility.GetBaseConfig``1(System.String)">
+            <summary>
+            讀取config 參數(T型態)(從Config)
+            </summary>
+            <typeparam name="T">參數型態</typeparam>
+            <param name="name">參數名稱</param>
+            <returns>T型態參數內容</returns>
+        </member>
+        <member name="M:CommonModule.CommUtility.GetConfig(System.String)">
+            <summary>
+            讀取config 參數(字串型態)
+            </summary>
+            <param name="name">參數名稱</param>
+            <returns>參數內容</returns>
+        </member>
+        <member name="M:CommonModule.CommUtility.GetConfig``1(System.String)">
+            <summary>
+            讀取config 參數(T型態)
+            </summary>
+            <typeparam name="T">參數型態</typeparam>
+            <param name="name">參數名稱</param>
+            <returns>T型態參數內容</returns>
+        </member>
+        <member name="M:CommonModule.CommUtility.GetConfig``1(System.String,``0)">
+            <summary>
+            讀取config 參數(T型態)
+            </summary>
+            <typeparam name="T">參數型態</typeparam>
+            <param name="name">參數名稱</param>
+            <param name="defValue">預設參數</param>
+            <returns>T型態參數內容</returns>
+        </member>
+        <member name="M:CommonModule.CommUtility.GetConfigWhenFailGetBaseConfig``1(System.String,``0)">
+            <summary>
+            讀取config 參數(T型態)，當讀取失敗時，改讀取基礎Config
+            </summary>
+            <typeparam name="T">參數型態</typeparam>
+            <param name="name">參數名稱</param>
+            <param name="defValue">預設參數</param>
+            <returns>T型態參數內容</returns>
+        </member>
+        <member name="M:CommonModule.CommUtility.GetConfigWhenFailGetBaseConfig``1(System.String)">
+            <summary>
+            讀取config 參數(T型態)，當讀取失敗時，改讀取基礎Config
+            </summary>
+            <typeparam name="T">參數型態</typeparam>
+            <param name="name">參數名稱</param>
+            <returns>T型態參數內容</returns>
+        </member>
+        <member name="M:CommonModule.CommUtility.GetConnectionString(System.String)">
+            <summary>
+            取得Web.config connectionStrings字串
+            </summary>
+            <param name="key">DB連線字串對應的Key值</param>
+            <returns>DB連線字串</returns>
+        </member>
+        <member name="M:CommonModule.CommUtility.StringToBool(System.String,System.Boolean)">
+            <summary>
+            將字串內容轉為布林型態
+            </summary>
+            <remarks>
+            Y,TRUE,1,YES 為true；N,NO,FALSE,0 為false
+            其餘傳回default_value
+            </remarks>
+            <param name="input_string">傳入參數</param>
+            <param name="default_value">預設值</param>
+            <returns>轉換後的布林型態</returns>
+        </member>
+        <member name="M:CommonModule.CommUtility.TryStringToBool(System.String,System.Boolean@)">
+            <summary>
+            將字串內容轉為布林型態
+            </summary>
+            <remarks>
+            Y,TRUE,1,YES 為true；N,NO,FALSE,0 為false
+            其餘傳回default_value
+            </remarks>
+            <param name="input_string">傳入參數</param>
+            <param name="output">轉換後的布林型態</param>
+            <returns>true:轉換成功，false:轉換失敗</returns>
+        </member>
+        <member name="M:CommonModule.CommUtility.GetContext(System.String)">
+            <summary>
+            GetContext.Items暫存資訊
+            </summary>
+            <param name="key">Items Key</param>
+            <returns>Items Content</returns>
+        </member>
+        <member name="M:CommonModule.CommUtility.GetContext``1(System.String)">
+            <summary>
+            GetContext.Items暫存資訊
+            </summary>
+            <typeparam name="T">回傳型態</typeparam>
+            <param name="key">Items Key</param>
+            <returns>Items Content</returns>
+        </member>
+        <member name="M:CommonModule.CommUtility.SetContext(System.String,System.Object)">
+            <summary>
+            SetContext.Items暫存資訊
+            </summary>
+            <param name="key">Items Key</param>
+            <param name="value">Items Content</param>
+        </member>
+        <member name="M:CommonModule.CommUtility.SQLIN``1(System.Collections.Generic.List{System.Data.SqlClient.SqlParameter},``0[],System.String)">
+            <summary>
+            使用SQL IN語法時，SqlParameter擺入字串處理
+            </summary>
+            <remarks>將陣列變數傳入SQL IN 指定，自動產生變數@InValue1 ~@InValueN，
+            並將變數至寫入condition集合中</remarks>
+            <typeparam name="T">The generic type parameter.</typeparam>
+            <param name="condition">SqlParameter 參數集合</param>
+            <param name="values">輸入多個參數</param>
+            <param name="valueName">SqlParameter 參數名稱(非必填)</param>
+            <returns>判斷結果</returns>
+        </member>
+        <member name="M:CommonModule.CommUtility.SQLLIKE(System.Collections.Generic.List{System.Data.SqlClient.SqlParameter},System.String,System.String)">
+            <summary>
+            使用SQL LIKE語法時，SqlParameter擺入字串處理
+            </summary>
+            <remarks>
+            包含阻止使用特殊字元查詢
+            </remarks>
+            <param name="condition">查詢條件</param>
+            <param name="value">SqlParameter 參數集合</param>
+            <param name="valueName">SqlParameter 參數名稱(非必填)</param>
+            <returns>字串處理結果</returns>
+        </member>
+        <member name="M:CommonModule.CommUtility.StrMapping(System.String,System.String[])">
+            <summary>
+            轉換對應字串
+            </summary>
+            <remarks>
+            例:"1","借款","2","還款","預設字串"
+            value = "1" return "借款"
+            value = "2" return "還款"
+            value = "3" (有預設字串時) return "預設字串"
+            value = "3" (無預設字串時) return "3"
+            </remarks>
+            <param name="value">輸入字串</param>
+            <param name="condition">條件及回應字串(預設字串)，例:"1","借款","2","還款","預設字串"</param>
+            <returns>回應字串或預設字串</returns>
+        </member>
+        <member name="M:CommonModule.CommUtility.IntMapping(System.Int32,System.String[])">
+            <summary>
+            轉換對應字串
+            </summary>
+            <remarks>
+            例:"借款","還款"
+            value = 0 return "借款"
+            value = 1 return "還款"
+            當找不到時回傳Value
+            </remarks>
+            <param name="value">輸入字串</param>
+            <param name="condition">條件及回應字串，例:"借款","還款"</param>
+            <returns>回應字串或預設字串</returns>
+        </member>
+        <member name="M:CommonModule.CommUtility.IntMapping(System.Byte,System.String[])">
+            <summary>
+            轉換對應字串
+            </summary>
+            <remarks>
+            例:"借款","還款"
+            value = 0 return "借款"
+            value = 1 return "還款"
+            當找不到時回傳Value
+            </remarks>
+            <param name="value">輸入字串</param>
+            <param name="condition">條件及回應字串，例:"借款","還款"</param>
+            <returns>回應字串或預設字串</returns>
+        </member>
+        <member name="M:CommonModule.CommUtility.ToInt(System.String,System.Int32)">
+            <summary>
+            string to Int
+            </summary>
+            <param name="value">輸入字串</param>
+            <param name="defValue">預設數值</param>
+            <returns>轉換結果</returns>
+        </member>
+        <member name="M:CommonModule.CommUtility.ToDecimal(System.String,System.Decimal)">
+            <summary>
+            string to decimal
+            </summary>
+            <param name="value">輸入字串</param>
+            <param name="defValue">預設數值</param>
+            <returns>轉換結果</returns>
+        </member>
+        <member name="M:CommonModule.CommUtility.ToIntOrNull(System.Object)">
+            <summary>
+            string to int?
+            </summary>
+            <param name="value">輸入字串</param>
+            <returns>轉換結果</returns>
+        </member>
+        <member name="M:CommonModule.CommUtility.ToDecimalOrNull(System.Object)">
+            <summary>
+            string to decimal?
+            </summary>
+            <param name="value">輸入字串</param>
+            <returns>轉換結果</returns>
+        </member>
+        <member name="M:CommonModule.CommUtility.ToDateTimeOrNull(System.Object)">
+            <summary>
+            string to DateTme?
+            </summary>
+            <param name="value">輸入字串</param>
+            <returns>轉換結果</returns>
+        </member>
+        <member name="M:CommonModule.CommUtility.SplitValue(System.Collections.Generic.List{System.String})">
+            <summary>
+            以逗點隔開列表中資料
+            </summary>
+            <param name="list">列表資料</param>
+            <returns>組合結果</returns>
+        </member>
+        <member name="M:CommonModule.CommUtility.DataTableFilter(System.Data.DataTable)">
+            <summary>
+            過濾DataTable空行
+            </summary>
+            <param name="dt">DataTable</param>
+            <returns>過濾結果</returns>
+        </member>
+        <member name="M:CommonModule.CommUtility.GetPoint(System.Decimal,System.Int32)">
+            <summary>
+            nubmer取小數點到decimals位四捨五入
+            </summary>
+            <param name="number">輸入數值</param>
+            <param name="decimals">小數位數</param>
+            <returns>CompanyCode</returns>
+        </member>
+        <member name="M:CommonModule.CommUtility.GetPointToString(System.Decimal,System.Int32,System.Boolean)">
+            <summary>
+            nubmer取小數點到decimals位四捨五入
+            </summary>
+            <param name="number">輸入數值</param>
+            <param name="decimals">小數位數(預設為0)</param>
+            <param name="fillZero">小數位數不足的是否要補0(預設為要)</param>
+            <returns>CompanyCode</returns>
+        </member>
+        <member name="M:CommonModule.CommUtility.Clone``1(``0)">
+            <summary>
+            複製元件(使用Json轉換)
+            </summary>
+            <typeparam name="T">物件類型</typeparam>
+            <param name="objectSource">要複製的元件</param>
+            <returns>擁有相同參數的元件</returns>
+        </member>
+        <member name="M:CommonModule.CommUtility.BuildInsertSQL(System.Object,System.Collections.Generic.List{System.Data.SqlClient.SqlParameter},System.Int32)">
+            <summary>
+            以Entity產生Native Sql insert 語法
+            </summary>
+            <param name="data">資料Entity</param>
+            <param name="paramList">參數列表</param>
+            <param name="idx">參數代號</param>
+            <returns>Insert Sql 語法</returns>
+        </member>
+        <member name="M:CommonModule.CommUtility.ConvertValue``1(System.String,``0)">
+            <summary>
+            變數型態轉換
+            </summary>
+            <typeparam name="T">轉換變數型態</typeparam>
+            <param name="value">變數內容</param>
+            <param name="defValue">預設值</param>
+            <returns>T 型態變數，轉換失敗回傳預設值</returns>
+        </member>
+        <member name="M:CommonModule.CommUtility.TryConvertValue``1(System.String,``0@)">
+            <summary>
+            變數型態轉換
+            </summary>
+            <typeparam name="T">轉換變數型態</typeparam>
+            <param name="value">變數內容</param>
+            <param name="output">T 型態變數</param>
+            <returns>true:轉換成功，false:轉換失敗</returns>
+        </member>
+        <member name="M:CommonModule.CommUtility.GetClientIPInfo">
+            <summary>
+            讀取Client IP資料，抓取X_FORWARDED_FOR參數 寫Log使用
+            </summary>
+            <returns>config 參數</returns>
+        </member>
+        <member name="M:CommonModule.CommUtility.GetLocaHostIP">
+            <summary>
+            GetLocaHostIP
+            </summary>
+            <returns>LocalIP</returns>
+        </member>
+        <member name="M:CommonModule.CommUtility.MatchObject(System.Object,System.Object)">
+            <summary>
+            使Model類似的兩個物件以toObj欄位為主，將fromObj資料寫入toObj
+            </summary>
+            <param name="fromObj">資料來源物件</param>
+            <param name="toObj">轉換結果物件</param>
+        </member>
+        <member name="M:CommonModule.CommUtility.TransYN(System.Int32,System.Object)">
+            <summary>
+            0,1轉換Y,N
+            </summary>
+            <param name="value">0,1</param>
+            <param name="defaultValue">非YN則不進行變更</param>
+            <returns>Y,N</returns>
+        </member>
+        <member name="M:CommonModule.CommUtility.TransYN(System.String,System.Object)">
+            <summary>
+            Y,N轉換0,1
+            </summary>
+            <param name="value">Y,N</param>
+            <param name="defaultValue">非YN則不進行變更</param>
+            <returns>0,1</returns>
+        </member>
+        <member name="M:CommonModule.CommUtility.SafeDivision(System.Decimal,System.Decimal)">
+            <summary>
+            安全的除法
+            </summary>
+            <param name="numerator">分子</param>
+            <param name="denominator">分母</param>
+            <returns>結果(分母為0,回傳0)</returns>
+        </member>
+        <member name="T:CommonModule.ConfigHelper">
+            <summary>
+            ConfigHelper(從Config讀取參數)
+            </summary>
+        </member>
+        <member name="M:CommonModule.ConfigHelper.GetConfig``1(System.String,``0)">
+            <summary>
+            讀取config 參數
+            </summary>
+            <typeparam name="T">變數類型</typeparam>
+            <param name="name">變數名稱</param>
+            <param name="defValue">預設參數</param>
+            <returns>T型態變數內容</returns>
+        </member>
+        <member name="M:CommonModule.ConfigHelper.GetConfig``1(System.String)">
+            <summary>
+            讀取config 參數
+            </summary>
+            <typeparam name="T">變數類型</typeparam>
+            <param name="name">變數名稱</param>
+            <returns>T型態變數內容</returns>
+        </member>
+        <member name="T:CommonModule.EnumDetailsAttribute">
+            <summary>
+            擴充Enum功能,加入自訂義Property
+            Coder:Mou
+            Date:2015/09/14
+            Modify By Kngiht
+            Date:2017/02/18
+            </summary>
+        </member>
+        <member name="P:CommonModule.EnumDetailsAttribute.Description">
+            <summary>
+            可擴充自訂義Property
+            </summary>
+        </member>
+        <member name="T:CommonModule.EnumExtension">
+            <summary>
+            擴充功能,取得自訂義Property
+            </summary>
+        </member>
+        <member name="T:CommonModule.ErrInfoException">
+            <summary>
+            ErrMark Model
+            </summary>
+        </member>
+        <member name="F:CommonModule.ErrInfoException.ErrNo">
+            <summary>
+            nErrNo
+            </summary>
+        </member>
+        <member name="F:CommonModule.ErrInfoException.ErrMsg">
+            <summary>
+            strErrMsg
+            </summary>
+        </member>
+        <member name="P:CommonModule.ErrInfoException.LogMsg">
+            <summary>
+            LogMsg
+            </summary>
+        </member>
+        <member name="M:CommonModule.ErrInfoException.#ctor(System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:CommonModule.ErrInfoException"/> class.
+            </summary>
+            <param name="errNo">錯誤代碼</param>
+            <param name="errMsg">錯誤內容</param>
+        </member>
+        <member name="M:CommonModule.ErrInfoException.#ctor(CommonModule.ResultStatus)">
+            <summary>
+            Initializes a new instance of the <see cref="T:CommonModule.ErrInfoException"/> class.
+            </summary>
+            <param name="resultStatus">結果狀態</param>
+        </member>
+        <member name="M:CommonModule.ErrInfoException.#ctor(System.String,CommonModule.ResultStatus)">
+            <summary>
+            Initializes a new instance of the <see cref="T:CommonModule.ErrInfoException"/> class.
+            </summary>
+            <param name="strPrefix">錯誤訊息前置字串</param>
+            <param name="resultStatus">結果狀態</param>
+        </member>
+        <member name="M:CommonModule.ErrInfoException.#ctor(CommonModule.ResultStatus,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:CommonModule.ErrInfoException"/> class.
+            </summary>
+            <param name="resultStatus">結果狀態</param>
+            <param name="strPostfix">錯誤訊息後置字串</param>
+        </member>
+        <member name="T:CommonModule.ExceptionHelper">
+            <summary>
+            ExceptionHelper
+            </summary>
+        </member>
+        <member name="M:CommonModule.ExceptionHelper.ErrInfo(CommonModule.ErrInfoException)">
+            <summary>
+            錯誤訊息處理
+            </summary>
+            <param name="ex">異常資訊</param>
+            <returns>ResponseObj</returns>
+        </member>
+        <member name="M:CommonModule.ExceptionHelper.Exception(System.Exception)">
+            <summary>
+            錯誤訊息處理
+            </summary>
+            <param name="exception">異常資訊</param>
+            <returns>ResponseObj</returns>
+        </member>
+        <member name="T:CommonModule.IConfig">
+            <summary>
+            Config 介面
+            </summary>
+        </member>
+        <member name="M:CommonModule.IConfig.GetConfig``1(System.String,``0)">
+            <summary>
+            讀出T型態參數
+            </summary>
+            <typeparam name="T">參數型態</typeparam>
+            <param name="name">參數名稱</param>
+            <param name="defValue">預設值</param>
+            <returns>T型態參數內容</returns>
+        </member>
+        <member name="M:CommonModule.IConfig.GetConfig``1(System.String)">
+            <summary>
+            讀出T型態參數
+            </summary>
+            <typeparam name="T">參數型態</typeparam>
+            <param name="name">參數名稱</param>
+            <returns>T型態參數內容</returns>
+        </member>
+        <member name="T:CommonModule.LogLevel">
+            <summary>
+            Log等級
+            </summary>
+        </member>
+        <member name="F:CommonModule.LogLevel.Debug">
+            <summary>除錯</summary>
+        </member>
+        <member name="F:CommonModule.LogLevel.Info">
+            <summary>資訊</summary>
+        </member>
+        <member name="F:CommonModule.LogLevel.Warn">
+            <summary>警告</summary>
+        </member>
+        <member name="F:CommonModule.LogLevel.Error">
+            <summary>錯誤</summary>
+        </member>
+        <member name="T:CommonModule.LogHelper">
+            <summary>
+            Log紀錄處理協助
+            </summary>
+        </member>
+        <member name="M:CommonModule.LogHelper.SetLogger(System.String)">
+            <summary>
+            設定NLog 目標
+            </summary>
+            <param name="targetName">targetName</param>
+        </member>
+        <member name="M:CommonModule.LogHelper.WriteLog(CommonModule.LogLevel,System.String,System.Exception,System.Int32,System.String)">
+            <summary>
+            將訊息寫入Log檔
+            (如果ex有給Log會寫入ex發生時的行數，否則會以lineNumber進行寫入，
+             lineNumber不給值會自動帶入呼叫程式的行數)
+            </summary>
+            <param name="level">Log等級</param>
+            <param name="content">要記錄的內容</param>
+            <param name="ex">Exception Instance</param>
+            <param name="lineNumber">錯誤或者是寫入Log的程式所在的行數</param>
+            <param name="className">類別名稱</param>
+        </member>
+        <member name="M:CommonModule.LogHelper.GetExceptionLineNumber(System.Exception)">
+            <summary>
+            取得Exception發生時的程式所在行數
+            </summary>
+            <param name="ex">發生錯誤時的Exception</param>
+            <returns>發生Exception所在行數(-1表示抓不到所在行數)</returns>
+        </member>
+        <member name="M:CommonModule.LogHelper.GetLogFullName(System.String)">
+            <summary>
+            取得Log檔完整路徑與檔案名稱
+            </summary>
+            <param name="targetName">目標名稱</param>
+            <returns>Log完整路徑與檔案名稱</returns>
+        </member>
+        <member name="M:CommonModule.LogHelper.GetSourceMethod(System.Exception)">
+            <summary>
+            取得呼叫本Log Method的Method Name
+            </summary>
+            <param name="ex">例外物件，有傳遞會以例外物件進行來嘗試取得Mehtod Name</param>
+            <returns>回傳Namespace.Name.Method Name(null:表示抓不到所在的Method Name)</returns>
+        </member>
+        <member name="M:CommonModule.LogHelper.GetEntityValidErrorMessage(System.Exception)">
+            <summary>
+            取得Entity詳細錯誤訊息
+            </summary>
+            <param name="ex">Exception </param>
+            <returns>錯誤訊息內容</returns>
+        </member>
+        <member name="M:CommonModule.LogHelper.GetStackTraceErrorMessage(System.Exception)">
+            <summary>
+            取得StackTrace詳細錯誤訊息
+            </summary>
+            <param name="ex">Exception </param>
+            <returns>錯誤訊息內容</returns>
+        </member>
+        <member name="M:CommonModule.LogHelper.GetInnerException(System.Exception)">
+            <summary>
+            取得最底層InnerExcption完整訊息
+            </summary>
+            <param name="ex">Exception </param>
+            <returns>最底層InnerExcption完整訊息</returns>
+        </member>
+        <member name="M:CommonModule.LogHelper.GetExceptionMessage(System.Exception)">
+            <summary>
+            取得Excption擷取後訊息
+            </summary>
+            <param name="ex">Exception </param>
+            <returns>Excption擷取後訊息</returns>
+        </member>
+        <member name="M:CommonModule.LogHelper.SendLogMail(CommonModule.LogLevel,System.String)">
+            <summary>
+            以SMTP寄送Warn、Error的Log信件
+            </summary>
+            <param name="level">Log Level</param>
+            <param name="errorMsg">Error Message </param>
+        </member>
+        <member name="T:CommonModule.SecurityHelper">
+            <summary>
+            安全性處理協助
+            </summary>
+        </member>
+        <member name="M:CommonModule.SecurityHelper.AESEncrypt(System.String,System.String)">
+            <summary>
+            AES加密
+            skey傳入16字為AES128; 32字為AES256
+            </summary>
+            <param name="plainStr">待加密字串</param>
+            <param name="skey">加密金鑰</param>
+            <returns>加密結果</returns>
+        </member>
+        <member name="M:CommonModule.SecurityHelper.AESEncrypt(System.Byte[],System.Byte[])">
+            <summary>
+            AES加密
+            skey傳入16字為AES128; 32字為AES256
+            </summary>
+            <param name="bData">待加密字串</param>
+            <param name="bKey">加密金鑰</param>
+            <returns>加密結果</returns>
+        </member>
+        <member name="M:CommonModule.SecurityHelper.AESDecrypt(System.String,System.String)">
+            <summary>
+            AES解密
+            </summary>
+            <param name="encryptStr">待解密字串</param>
+            <param name="skey">加密金鑰</param>
+            <returns>解密結果</returns>
+        </member>
+        <member name="M:CommonModule.SecurityHelper.AESDecrypt(System.Byte[],System.Byte[])">
+            <summary>
+            AES解密
+            </summary>
+            <param name="bData">待解密字串</param>
+            <param name="bKey">加密金鑰</param>
+            <returns>解密結果</returns>
+        </member>
+        <member name="M:CommonModule.SecurityHelper.SHA256Encrypt(System.String)">
+            <summary>
+            SHA256加密
+            </summary>
+            <param name="plainStr">待加密字串 by string</param>
+            <returns>加密結果</returns>
+        </member>
+        <member name="M:CommonModule.SecurityHelper.SHA256Encrypt(System.Byte[])">
+            <summary>
+            SHA256加密
+            </summary>
+            <param name="bytes">待加密字串 by byte[]</param>
+            <returns>加密結果</returns>
+        </member>
+        <member name="M:CommonModule.SecurityHelper.SHA256EncryptForSignature(System.String)">
+            <summary>
+            SHA256加密 For Signature
+            </summary>
+            <param name="plainStr">待加密字串 by string</param>
+            <returns>加密結果</returns>
+        </member>
+        <member name="M:CommonModule.SecurityHelper.RNGCrypt(System.Int32)">
+            <summary>
+            產生一個非負數且最大值 max 以下的亂數
+            </summary>
+            <param name="max">最大值</param>
+            <returns>隨機亂數數字</returns>
+        </member>
+        <member name="M:CommonModule.SecurityHelper.RNGCrypt(System.Int32,System.Int32)">
+            <summary>
+            產生一個非負數且最小值在 min 以上最大值在 max 以下的亂數
+            </summary>
+            <param name="min">最小值</param>
+            <param name="max">最大值</param>
+            <returns>隨機亂數數字</returns>
+        </member>
+        <member name="M:CommonModule.SecurityHelper.Base64Encode(System.String)">
+            <summary>
+            將文字做Base64加密
+            </summary>
+            <param name="str">str</param>
+            <returns>Base64字串</returns>
+        </member>
+        <member name="M:CommonModule.SecurityHelper.Base64Decode(System.String)">
+            <summary>
+            將Base64字串轉回文字
+            </summary>
+            <param name="base64Str">base64Str</param>
+            <returns>轉回結果</returns>
+        </member>
+        <member name="M:CommonModule.SecurityHelper.SignJWT(System.String,System.String)">
+            <summary>
+            對JWT的header和payLoad 簽章(signature)
+            </summary>
+            <param name="header">JWT的header</param>
+            <param name="payLoad">JWT的payLoad</param>
+            <returns>Base64簽章</returns>
+        </member>
+        <member name="M:CommonModule.SecurityHelper.TimeStampValidate(System.String)">
+            <summary>
+            驗證時間戳記是否符合
+            </summary>
+            <param name="timeStamp">Base64 TimeStamp string</param>
+            <returns>true:符合;false:不符合</returns>
+        </member>
+        <member name="M:CommonModule.SecurityHelper.GenerateSalt(System.String,System.String)">
+            <summary>
+            產生驗證用的Salt
+            </summary>
+            <param name="name">Route Method Name</param>
+            <param name="timeStamp">時間戳記</param>
+            <returns>驗證用的Salt</returns>
+        </member>
+        <member name="M:CommonModule.SecurityHelper.GenerateAESKey(System.String)">
+            <summary>
+            產生Aes Key
+            </summary>
+            <param name="factor">因子(Token)</param>
+            <returns>Aes Key</returns>
+        </member>
+        <member name="M:CommonModule.SecurityHelper.GetRequestBody">
+            <summary>
+            取得Request Body內容
+            </summary>
+            <returns>Request Body內容</returns>
+        </member>
+        <member name="M:CommonModule.SecurityHelper.GetResponseBody(System.Net.Http.HttpResponseMessage)">
+            <summary>
+            取得Response Body內容
+            </summary>
+            <param name="httpResponseMessage">httpResponseMessage</param>
+            <returns>Response Body內容</returns>
+        </member>
+        <member name="M:CommonModule.SecurityHelper.GetTokenValidMin">
+            <summary>
+            取得Token有效時間(分鐘)
+            預設15分鐘
+            </summary>
+            <returns>Token有效時間</returns>
+        </member>
+        <member name="T:CommonModule.SmtpMailHelper">
+            <summary>
+            SMTP Mail共用
+            </summary>
+        </member>
+        <member name="M:CommonModule.SmtpMailHelper.SendSmtpMail(System.String,System.String,System.String,System.String,System.Net.Mail.Attachment,System.Boolean)">
+            <summary>
+            以SMTP寄送信件
+            </summary>
+            <param name="mailFrom">寄件者</param>
+            <param name="mailTo">收件者</param>
+            <param name="mailSubject">信件主旨</param>
+            <param name="mailBody">信件內容</param>
+            <param name="attachFile">附加檔案</param>
+            <param name="isBodyHtml">信件內容是否為Html</param>
+        </member>
+        <member name="M:CommonModule.SmtpMailHelper.SendSmtpMail(System.String,System.String[],System.String,System.String,System.Net.Mail.Attachment,System.Boolean)">
+            <summary>
+            以SMTP寄送信件(多個收件者)
+            </summary>
+            <param name="mailFrom">寄件者</param>
+            <param name="mailToList">收件者(多個收件者)</param>
+            <param name="mailSubject">信件主旨</param>
+            <param name="mailBody">信件內容</param>
+            <param name="attachFile">附加檔案</param>
+            <param name="isBodyHtml">信件內容是否為Html</param>
+        </member>
+        <member name="T:CommonModule.TimeLogHelper">
+            <summary>
+            共用函數
+            </summary>
+            <summary>
+            計時函數
+            </summary>
+        </member>
+        <member name="F:CommonModule.TimeLogHelper.startTime">
+            <summary>
+            起始時間
+            </summary>
+        </member>
+        <member name="F:CommonModule.TimeLogHelper.lastTime">
+            <summary>
+            上次使用時間
+            </summary>
+        </member>
+        <member name="F:CommonModule.TimeLogHelper.timeDict">
+            <summary>
+            紀錄多個時間點
+            </summary>
+        </member>
+        <member name="M:CommonModule.TimeLogHelper.GetTotalTime">
+            <summary>
+            取得目前經過總時間
+            </summary>
+            <returns>回傳從啟動號後到現在經過多久(Seconds)</returns>
+        </member>
+        <member name="M:CommonModule.TimeLogHelper.GetBetweenLastTime">
+            <summary>
+            取得與上次間隔時間
+            </summary>
+            <returns>回傳上次呼叫後到這次經過多久(Seconds)</returns>
+        </member>
+        <member name="M:CommonModule.TimeLogHelper.WriteTimeLog(System.String)">
+            <summary>
+            將經過總時間與經過上次時間寫入Log
+            </summary>
+            <param name="message">log中前導訊息</param>
+        </member>
+        <member name="M:CommonModule.TimeLogHelper.SetTimeMessage(System.String,System.Nullable{System.DateTime})">
+            <summary>
+            設定時間點與顯示訊息
+            </summary>
+            <param name="message">與時間相關顯示訊息</param>
+            <param name="setTime">設定時間(未帶入或null使用DateTime.Now)</param>
+        </member>
+        <member name="M:CommonModule.TimeLogHelper.WriteMultiTimeLog(System.Nullable{System.DateTime})">
+            <summary>
+            將多個時間點相關訊息寫入Log
+            </summary>
+            <param name="endTime">總時間結束點(未帶入時，使用最後一筆的時間點)</param>
+        </member>
+        <member name="M:CommonModule.TimeLogHelper.CountTime(System.DateTime,System.Nullable{System.DateTime})">
+            <summary>
+            計算兩個時間差
+            </summary>
+            <param name="beginTime">開始時間</param>
+            <param name="endTime">結束時間(未帶入或null使用DateTime.Now)</param>
+            <returns>回傳兩個時間中間相差的秒數(Seconds)</returns>
+        </member>
+        <member name="T:CommonModule.IResultStatus">
+            <summary>
+            自訂義回應文案
+            </summary>
+        </member>
+        <member name="M:CommonModule.IResultStatus.SetCustomResultMsg">
+            <summary>
+            自訂義回應文案
+            </summary>
+            <returns>回應文案對應對應檔</returns>
+        </member>
+        <member name="T:CommonModule.ITokenValidate">
+            <summary>
+            Token 驗證介面
+            </summary>
+        </member>
+        <member name="M:CommonModule.ITokenValidate.ValidateDBToken(System.String)">
+            <summary>
+            驗證Token(在儲存體DB)是否合法
+            </summary>
+            <param name="toekn">Token</param>
+            <returns>結果</returns>
+        </member>
+        <member name="M:CommonModule.ITokenValidate.ValidateDBTokenLogout(System.String)">
+            <summary>
+            驗證Token(在儲存體DB)是否被登出
+            </summary>
+            <param name="toekn">Token</param>
+            <returns>結果</returns>
+        </member>
+        <member name="M:CommonModule.ITokenValidate.ValidateDBTokenEffective(System.String)">
+            <summary>
+            驗證Token(在儲存體DB)是否過時
+            </summary>
+            <param name="toekn">Token</param>
+            <returns>結果</returns>
+        </member>
+        <member name="T:CommonModule.JWTHeader">
+            <summary>
+            JWTHeader
+            </summary>
+        </member>
+        <member name="F:CommonModule.JWTHeader.Typ">
+            <summary>
+            交易格式
+            </summary>
+        </member>
+        <member name="F:CommonModule.JWTHeader.Alg">
+            <summary>
+            加密方式
+            </summary>
+        </member>
+        <member name="M:CommonModule.JWTHeader.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:CommonModule.JWTHeader"/> class.
+            </summary>
+        </member>
+        <member name="T:CommonModule.JWTPayload">
+            <summary>
+            JWTPayload
+            </summary>
+        </member>
+        <member name="P:CommonModule.JWTPayload.Jti">
+            <summary>
+            登入伺服端識別碼
+            </summary>
+        </member>
+        <member name="P:CommonModule.JWTPayload.Exp">
+            <summary>
+            到期時間
+            </summary>
+        </member>
+        <member name="P:CommonModule.JWTPayload.Uid">
+            <summary>
+            使用者代號
+            </summary>
+        </member>
+        <member name="T:CommonModule.RequestHeader">
+            <summary>
+            上行電文Http檔頭
+            </summary>
+        </member>
+        <member name="P:CommonModule.RequestHeader.Sequence">
+            <summary>
+            時間戳記
+            </summary>
+        </member>
+        <member name="P:CommonModule.RequestHeader.AppInfo">
+            <summary>
+            App版本
+            </summary>
+        </member>
+        <member name="P:CommonModule.RequestHeader.DevType">
+            <summary>
+            裝置版本
+            </summary>
+        </member>
+        <member name="P:CommonModule.RequestHeader.DevID">
+            <summary>
+            裝置識別碼
+            </summary>
+        </member>
+        <member name="P:CommonModule.RequestHeader.TokenID">
+            <summary>
+            Json Web Token
+            </summary>
+        </member>
+        <member name="P:CommonModule.RequestHeader.VID">
+            <summary>
+            來源驗證
+            </summary>
+        </member>
+        <member name="P:CommonModule.RequestHeader.Signature">
+            <summary>
+            簽章
+            </summary>
+        </member>
+        <member name="T:CommonModule.RequestObj`1">
+            <summary>
+            上傳電文元件
+            </summary>
+            <typeparam name="T">物件</typeparam>
+        </member>
+        <member name="P:CommonModule.RequestObj`1.RequestData">
+            <summary>
+            上傳資料
+            </summary>
+        </member>
+        <member name="T:CommonModule.ResponseObj">
+            <summary>
+            回傳元件
+            </summary>
+        </member>
+        <member name="P:CommonModule.ResponseObj.ReturnCode">
+            <summary>
+            回應代碼
+            </summary>
+        </member>
+        <member name="P:CommonModule.ResponseObj.ReturnMsg">
+            <summary>
+            回應訊息
+            </summary>
+        </member>
+        <member name="P:CommonModule.ResponseObj.Sequence">
+            <summary>
+            系統時間
+            </summary>
+        </member>
+        <member name="P:CommonModule.ResponseObj.ReturnData">
+            <summary>
+            JWT
+            </summary>
+        </member>
+        <member name="M:CommonModule.ResponseObj.#ctor">
+            <summary>
+            建構子
+            </summary>
+        </member>
+        <member name="M:CommonModule.ResponseObj.#ctor(System.String,System.String)">
+            <summary>
+            建構子
+            </summary>
+            <param name="returnCode">回傳代碼</param>
+            <param name="returnMsg">回傳訊息</param>
+        </member>
+        <member name="M:CommonModule.ResponseObj.#ctor(CommonModule.ResultStatus)">
+            <summary>
+            建構子
+            </summary>
+            <param name="data">回傳資料</param>
+        </member>
+        <member name="M:CommonModule.ResponseObj.#ctor(System.Object)">
+            <summary>
+            建構子
+            </summary>
+            <param name="data">回傳資料</param>
+        </member>
+        <member name="T:CommonModule.ToJsonString">
+            <summary>
+            ToJsonString
+            </summary>
+        </member>
+        <member name="M:CommonModule.ToJsonString.ToString">
+            <summary>
+            將資料物件轉換為 JavaScript 物件標記法 (JSON) 格式的字串
+            </summary>
+            <returns>string</returns>
+        </member>
+        <member name="T:CommonModule.KeyCode">
+            <summary>
+            Key管理
+            </summary>
+        </member>
+        <member name="P:CommonModule.KeyCode.JwtTokenKey">
+            <summary>
+            JWT 用 KEY
+            </summary>
+        </member>
+        <member name="P:CommonModule.KeyCode.PushAesKey">
+            <summary>
+            AES 用 KEY
+            </summary>
+        </member>
+        <member name="T:CommonModule.ResultStatus">
+            <summary>
+            共用Response 結果狀態清單
+            ## 代碼前綴字母說明
+            [A] 權限/Token驗證碼相關            [C] 一般狀況              [D] 資料庫相關             [V] 資料驗證相關
+            </summary>
+        </member>
+        <member name="T:CommonModule.AuthService">
+            <summary>
+            資料驗證服務
+            </summary>
+        </member>
+        <member name="P:CommonModule.AuthService.AuthKey">
+            <summary>
+            電文加解密金鑰
+            </summary>
+        </member>
+        <member name="P:CommonModule.AuthService.RqHeader">
+            <summary>
+            上行電文Http檔頭
+            </summary>
+        </member>
+        <member name="M:CommonModule.AuthService.ValidateSequence">
+            <summary>
+            驗證時效性
+            </summary>
+        </member>
+        <member name="M:CommonModule.AuthService.ValidateVID">
+            <summary>
+            驗證來源正確性(VID)
+            </summary>
+        </member>
+        <member name="M:CommonModule.AuthService.ValidateDataSignature(System.String)">
+            <summary>
+            驗證上行電文內容正確性
+            </summary>
+            <param name="rqData">上行電文</param>
+        </member>
+        <member name="M:CommonModule.AuthService.ValidateJsonWebToken">
+            <summary>
+            驗證Json Web Token
+            </summary>
+            <returns>Jwt Jti</returns>
+        </member>
+        <member name="M:CommonModule.AuthService.CreateJsonWebToken(System.String,System.Boolean)">
+            <summary>
+            產生Json Web Token
+            </summary>
+            <param name="userId">使用者代號</param>
+            <param name="uptContext">是否更新暫存</param>
+            <returns>Json Web Token</returns>
+        </member>
+        <member name="M:CommonModule.AuthService.SignJsonWebToken(System.String,System.String)">
+            <summary>
+            產生Json Web Token簽章(signature)
+            </summary>
+            <param name="header">JWT的header</param>
+            <param name="payLoad">JWT的payLoad</param>
+            <returns>Base64簽章</returns>
+        </member>
+        <member name="M:CommonModule.AuthService.CreateAESKey(System.String)">
+            <summary>
+            產生Aes Key
+            </summary>
+            <param name="factor">產生因子</param>
+            <returns>AES Key</returns>
+        </member>
+        <member name="M:CommonModule.AuthService.BindRequestData(System.Net.Http.Headers.HttpRequestHeaders,System.String)">
+            <summary>
+            Bind上行電文資料
+            </summary>
+            <param name="httpHeader">Http Header</param>
+            <param name="httpBody">Http Body</param>
+        </member>
+        <member name="T:CommonModule.SwaggerService">
+            <summary>
+             Swagger服務
+            </summary>
+        </member>
+        <member name="P:CommonModule.SwaggerService.SwaggerJwt">
+            <summary>
+             Swagger使用的Jwt
+            </summary>
+        </member>
+        <member name="M:CommonModule.SwaggerService.Register">
+            <summary>
+            註冊Swagger
+            </summary>
+        </member>
+        <member name="M:CommonModule.SwaggerService.GetXmlCommentsPath">
+            <summary>
+            建置後的XML文件檔案
+            </summary>
+            <returns>XML檔案路徑</returns>
+        </member>
+        <member name="M:CommonModule.SwaggerService.CreateSwaggerHeader">
+            <summary>
+            產生Swagger測試用的資料
+            </summary>
+        </member>
+        <member name="T:CommonModule.AddCustomerHeaderParameter">
+            <summary>
+            自訂義標頭擴充Class
+            </summary>
+        </member>
+        <member name="M:CommonModule.AddCustomerHeaderParameter.Apply(Swashbuckle.Swagger.Operation,Swashbuckle.Swagger.SchemaRegistry,System.Web.Http.Description.ApiDescription)">
+            <summary>
+            OverWrite Virtual Function
+            </summary>
+            <param name="operation">operation</param>
+            <param name="schemaRegistry">schemaRegistry</param>
+            <param name="apiDescription">apiDescription</param>
+        </member>
+        <member name="T:CommonModule.ResultStatusSingleton">
+            <summary>
+            回應狀態說明Singleton
+            </summary>
+        </member>
+        <member name="M:CommonModule.ResultStatusSingleton.GetInstance">
+            <summary>
+            使用靜態方法取得實例，因為載入時就 new 一個實例，所以不用考慮多執行緒的問題
+            </summary>
+            <returns>Instance</returns>
+        </member>
+        <member name="M:CommonModule.ResultStatusSingleton.GetInstance(CommonModule.IResultStatus)">
+            <summary>
+            設定自訂義文案及取得實例
+            </summary>
+            <param name="srv">自訂義文案服務</param>
+            <returns>Instance</returns>
+        </member>
+        <member name="M:CommonModule.ResultStatusSingleton.GetResultMsg(System.String,System.String)">
+            <summary>
+            取得回應文案
+            </summary>
+            <param name="resultCode">狀態碼</param>
+            <param name="defMsg">預設狀態碼文案</param>
+            <returns>狀態碼文案</returns>
+        </member>
+        <member name="T:ELogCMSGateway.Models.Api.CompDeptFunctionInfo">
+            <summary>
+            2.6/2.9/2.13/2.15.1/2.27_取得基本資料
+            </summary>
+        </member>
+        <member name="M:ELogCMSGateway.Models.Api.CompDeptFunctionInfo.#ctor">
+            <summary>
+            GetFunctionList
+            </summary>
+        </member>
+        <member name="P:ELogCMSGateway.Models.Api.CompDeptFunctionInfo.ACompanyID">
+            <summary>
+            公司代碼
+            </summary>
+        </member>
+        <member name="P:ELogCMSGateway.Models.Api.CompDeptFunctionInfo.ADescription">
+            <summary>
+            公司名稱
+            </summary>
+        </member>
+        <member name="P:ELogCMSGateway.Models.Api.CompDeptFunctionInfo.Department">
+            <summary>
+            部門列表
+            </summary>
+        </member>
+        <member name="T:ELogCMSGateway.Models.Api.DeptInfo">
+            <summary>
+            2.6 功能列表
+            </summary>
+        </member>
+        <member name="P:ELogCMSGateway.Models.Api.DeptInfo.BDepartmentID">
+            <summary>
+            部門代碼
+            </summary>
+        </member>
+        <member name="P:ELogCMSGateway.Models.Api.DeptInfo.BDescription">
+            <summary>
+            部門名稱
+            </summary>
+        </member>
+        <member name="T:ELogCMSGateway.Models.Api.CompInfo">
+            <summary>
+            2.9 getCompany 取得公司別
+            </summary>
+        </member>
+        <member name="P:ELogCMSGateway.Models.Api.CompInfo.CompanyID">
+            <summary>
+            公司代碼
+            </summary>
+        </member>
+        <member name="P:ELogCMSGateway.Models.Api.CompInfo.Description">
+            <summary>
+            公司名稱
+            </summary>
+        </member>
+        <member name="T:ELogCMSGateway.Models.Api.LicenseAircraftType">
+            <summary>
+            2.13 getLicenseAircraftType 取得證照行別代碼
+            </summary>
+        </member>
+        <member name="P:ELogCMSGateway.Models.Api.LicenseAircraftType.LicenseAircraftTypeID">
+            <summary>
+            證照飛機型別代碼
+            </summary>
+        </member>
+        <member name="P:ELogCMSGateway.Models.Api.LicenseAircraftType.Description">
+            <summary>
+            證照飛機型別名稱
+            </summary>
+        </member>
+        <member name="P:ELogCMSGateway.Models.Api.LicenseAircraftType.LicenseCompanyID">
+            <summary>
+            公司別
+            </summary>
+        </member>
+        <member name="T:ELogCMSGateway.Models.Api.GetFleets">
+            <summary>
+            2.15.1 getFleets 取得機隊
+            </summary>
+        </member>
+        <member name="P:ELogCMSGateway.Models.Api.GetFleets.CompanyID">
+            <summary>
+            公司別
+            </summary>
+        </member>
+        <member name="P:ELogCMSGateway.Models.Api.GetFleets.FleetID">
+            <summary>
+            機隊代碼
+            </summary>
+        </member>
+        <member name="P:ELogCMSGateway.Models.Api.GetFleets.Description">
+            <summary>
+            證照飛機型別名稱
+            </summary>
+        </member>
+        <member name="P:ELogCMSGateway.Models.Api.GetFleets.Status">
+            <summary>
+            啟用狀態
+            </summary>
+        </member>
+        <member name="T:ELogCMSGateway.Models.Api.GetStation">
+            <summary>
+            2.27 getStation取得機場資料
+            </summary>
+        </member>
+        <member name="P:ELogCMSGateway.Models.Api.GetStation.AirportID">
+            <summary>
+            機場代碼
+            </summary>
+        </member>
+        <member name="P:ELogCMSGateway.Models.Api.GetStation.Description">
+            <summary>
+            機場名稱
+            </summary>
+        </member>
+    </members>
+</doc>
